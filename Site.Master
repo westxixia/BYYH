@@ -1,0 +1,46 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="BYYHDemo.SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link href="~/css/Site.css" rel="stylesheet" type="text/css" />
+	<link href="~/css/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <!--[if gte IE 9]><script type="text/javascript" src="js/jquery-1.11.0.min.js" ></script><![endif]-->
+	<!--[if lt IE 9]><script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script><![endif]-->
+	<script type="text/javascript" src="js/common.js" ></script>
+	<script type="text/javascript" src="js/jquery-ui-datepicker.js"></script>
+	
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server">
+    <div class="page">
+        <div class="header">
+            <div class="title">
+                <asp:Image ID="imgLogo" ImageUrl="~/images/logo.JPG" runat="server" width="240px" Height="55px"/>
+            </div>
+            <div class="loginDisplay">
+				<div id="divRegister" runat="server">
+					[ <a href="~/login.aspx" ID="lnkHeadLoginStatus" runat="server">登录</a> ]
+				</div>
+				<div id="divLoginFailed" runat="server">
+				欢迎使用 <span class="bold"><asp:label ID="lblLoginName" runat="server" /></span>!
+                [ <asp:Button ID="btnLogout" runat="server" Text="注销" OnClick="BtnLogout_Click" /> ]
+				</div>
+            </div>
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="footer">
+        
+    </div>
+    </form>
+</body>
+</html>
